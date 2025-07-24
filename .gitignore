@@ -1,0 +1,23 @@
+# Hugo build output
+/public/
+/resources/_gen/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Node modules (if you ever use npm tooling)
+node_modules/
+
+# System files
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+*.log
+
+# Env/Secrets
+.env

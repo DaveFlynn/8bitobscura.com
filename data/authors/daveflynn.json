@@ -1,0 +1,9 @@
+{
+  "name": "Dave Flynn",
+  "bio": "Retro gaming scavenger in Taiwan",
+  "social": [
+    { "name": "linkedin", "url": "https://www.linkedin.com/in/daveflynn81/" },
+    { "name": "medium", "url": "https://medium.com/@daveflynn" },
+    { "name": "github", "url": "https://github.com/daveflynn" }
+  ]
+}
