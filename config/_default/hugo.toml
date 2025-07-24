@@ -19,7 +19,7 @@ buildFuture = false
 
 enableEmoji = true
 
-googleAnalytics = ""
+googleAnalytics = "G-12MYJRY3VM"
 
 [pagination]
   pagerSize = 102
