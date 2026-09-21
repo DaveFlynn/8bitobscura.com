@@ -34,40 +34,29 @@ The site will be generated in the `public/` directory.
 
 ---
 
-## Manual Deployment
+## Deployment
 
-1. SSH into the server:
+Hosted on Cloudflare Workers (static assets), configured by `wrangler.jsonc`.
+Every push to `main` builds and deploys automatically; other branches get preview URLs.
 
-```bash
-ssh user@ip
-cd /opt/8bitobscura.com
-```
+Cloudflare project settings (Workers & Pages → `8bitobscura-com` → Settings → Build):
 
-2. Pull the latest changes:
+| Field | Value |
+| :-- | :-- |
+| Build command | `git submodule update --init --recursive && hugo --gc --minify` |
+| Deploy command | `npx wrangler deploy` |
+| Build variable | `HUGO_VERSION` = `0.148.2` (Blowfish v2.88 supports Hugo 0.137–0.148) |
 
-```bash
-git pull
-git submodule update --init --recursive
-```
-
-3. Build the site:
+Emergency / local deploy:
 
 ```bash
-hugo
+hugo --gc --minify && npx wrangler deploy
 ```
 
-4. Deploy the output:
+Roll back: Workers & Pages → `8bitobscura-com` → Deployments → Rollback.
 
-```bash
-sudo rsync -avz --delete public/ /var/www/8bitobscura.com/html/
-sudo chown -R www-data:www-data /var/www/8bitobscura.com/html/
-```
-
-5. (Optional) Reload Nginx:
-
-```bash
-sudo systemctl reload nginx
-```
+> `routes` in `wrangler.jsonc` is authoritative: every hostname the site serves on
+> must be listed there, or the next deploy deletes its custom domain and DNS record.
 
 ---
 

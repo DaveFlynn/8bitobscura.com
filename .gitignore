@@ -21,3 +21,6 @@ node_modules/
 
 # Env/Secrets
 .env
+
+# Wrangler
+.wrangler/
