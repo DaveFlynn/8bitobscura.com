@@ -1,6 +1,7 @@
 {
   "name": "8bitobscura-com",              // MUST match the Cloudflare project name
   "compatibility_date": "2026-09-01",
+  "workers_dev": false,                    // serve only on the custom domain, no duplicate *.workers.dev copy
   "routes": [                              // AUTHORITATIVE: unlisted custom domains are deleted on deploy
     { "pattern": "8bitobscura.com", "custom_domain": true }
     // www.8bitobscura.com is deliberately absent: a Redirect Rule sends it to the apex
