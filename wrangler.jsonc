@@ -1,8 +1,10 @@
 {
   "name": "8bitobscura-com",              // MUST match the Cloudflare project name
   "compatibility_date": "2026-09-01",
-  // "routes" is added once the custom domains are attached in the dashboard.
-  // It is AUTHORITATIVE: any hostname not listed is deleted on deploy.
+  "routes": [                              // AUTHORITATIVE: unlisted custom domains are deleted on deploy
+    { "pattern": "8bitobscura.com", "custom_domain": true }
+    // www.8bitobscura.com is deliberately absent: a Redirect Rule sends it to the apex
+  ],
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page"

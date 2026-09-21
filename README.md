@@ -53,6 +53,9 @@ Emergency / local deploy:
 hugo --gc --minify && npx wrangler deploy
 ```
 
+`www.8bitobscura.com` 301-redirects to the apex via a zone Redirect Rule
+(Rules → Redirect Rules), so only the apex is a custom domain.
+
 Roll back: Workers & Pages → `8bitobscura-com` → Deployments → Rollback.
 
 > `routes` in `wrangler.jsonc` is authoritative: every hostname the site serves on
